@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      /* Type selector */
+      body {
+        margin: 10px;
+      }
+      /* class selector */
+      .product {
+        color: teal;
+      }
+      /* id selector */
+      #products {
+        margin: 20px;
+      }
+      /* attribute selector */
+      a[traget] {
+      }
+      a[target="_blank"] {
+        color: gold;
+      }
+      /* below url change break style
+      because we are checking for exact match. */
+      a[href="https://google.com"]
+      {
+        color: skyblue;
+      }
+      /* To make our code flexible we can check for the word
+      google like */
+      a[href*='google']
+      /* if google word present in given url */
+      a[href^='https']
+      /* if https word is 1st word in given url */
+      a[href^='.com']
+      /* if .com word is last word in given url */
+      /* we can also use combine condition like */
+      a[href^='https'] [href$='.com'] {
+        background: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="products">
+      <article class="product">
+        <p>hello world</p>
+      </article>
+      <article class="product">
+        <p>Hello sea</p>
+      </article>
+      <article class="product">
+        <p>Hello universe</p>
+      </article>
+    </section>
+    <a href="https://google.com" target="_blank">Google</a>
+  </body>
+</html>
