@@ -1,0 +1,78 @@
+<!-- we have different units of meausurement 
+ they fall under 2 category
+  -absolute
+  -relative
+  ------------------------------------------------------------------------------------
+  absolute                                      relative
+  ------------------------------------------------------------------------------------
+  px    //size according to pixel value
+  pt    //mainly used in printing           %       //relative to size of container
+  in    //mainly used in printing           vw      //relative to view port width
+  cm    //mainly used in printing           vh      //relative to view port height
+  mm    //mainly used in printing           em      //relative to font size of current element.
+                                            rem     //relative to font size of root element
+  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        /* if we give body width */
+        width: 300px;
+        /* box will be 150px */
+      }
+      .box {
+        /* px unit */
+        width: 100px;
+        height: 100px;
+        /* size of box never change with pixel value, it is not responsive, but it is useful when we don't want value to change
+        with value like border we want fix border */
+        border-top: 3px solid orange;
+
+        /* percentage unit */
+        width: 50%;
+        /* means 50% width of parenet element in this case div have parent of body so 50% of body
+        body is block level element so by default it takes entire width then our box will be half of browser window
+        if we give body width box will be 150px half of body*/
+        /* if we resize window our box also get resized, it is benefit of using relative unit */
+        height: 100%;
+        /* now if we give height to 100%, then our box collapse, because default height of body parent in this case is 0, 
+        so it inherit body height 
+        block level height increase according to content inside it, if we don't give them hight manually,no content height is 0 */
+        background-color: gold;
+        /* viewport unit */
+        /* to take entire vertical space we can use viewport unit like */
+        height: 100vh;
+        width: 50vw;
+        /* if we resize our window, our box will also get resized */
+
+        /* em unit */
+        width: 10em;
+        /* means 10 * font size of current element. if it doen't have fontsize will take parent element recursively until it find fontsize 
+        In this case we have parent body don't have fontsize,body parent is html element, every html element have fontsize of 16px 
+        10em = 10 * 16px = 160px 
+        if we give it fontsize of 20px*/
+        font-size: 20px;
+        /* width will be 200px 
+        problem with that is if we don't have fontsize property we have to trace fontsize of parent until it find it is complicated*/
+        /* so we have another unit called rem unit */
+
+        /* rem unit */
+        /* 10rem = 10 * fontsize of root element(i.e.(html) 16px) ->10*16 = 160px
+        for simplicity we give root element fontsize of 62.5% -> 62.5% of 16px = 10px, to make calculation easier 
+        html {
+          font-size: 62.5%;
+        }
+          width:15rem; means 150px
+        */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- if we type some thing in div height increase to accoring to contenet, height accoring hello height -->
+    <div class="box">hello</div>
+  </body>
+</html>
