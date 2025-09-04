@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        background-color: dodgerblue;
+        padding: 1rem;
+      }
+      .box:nth-of-type(2) {
+        background-color: gold;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+      @media screen and (min-width: 629px) and (max-width: 900px) {
+        .container {
+          flex-direction: row;
+        }
+        .box {
+          background-color: white;
+        }
+      }
+      @media print {
+        body {
+          font-size: 12pt;
+        }
+        .box {
+          padding: 0.5cm;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+          reprehenderit quidem doloremque numquam quasi praesentium? Qui neque
+          expedita sunt deleniti hic facere. Vero nesciunt corporis enim
+          assumenda cumque quam iste.
+        </p>
+      </div>
+      <div class="box">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur,
+          adipisci. Adipisci voluptas reiciendis earum sunt esse minus quaerat
+          blanditiis, harum nostrum quas rem. Alias optio, deserunt voluptatum
+          fugit doloribus porro.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

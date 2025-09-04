@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+      .container :first-child {
+        background-color: tomato;
+      }
+      .box {
+        background-color: gold;
+        margin: 2px;
+        padding: 1rem;
+      }
+      .box-two {
+        background-color: dodgerblue;
+      }
+      /* media query starts with @media screen and (min-width: 600px) and define css property
+      for screen min-width of 600 
+      if we resize our browser window we get different layout 
+      we can set print instead of screen by this we get applied css when printing document
+      also have max-width  */
+
+      /* remaining styling according to width to make page responsive */
+
+      @media screen and (min-width: 600px) {
+        .container {
+          flex-direction: row;
+        }
+      }
+      @media screen and (max-width: 900px) {
+        .container {
+          flex-direction: row;
+        }
+        .box {
+          background-color: white;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box-one">A</div>
+      <div class="box box-two">B</div>
+    </div>
+  </body>
+</html>
