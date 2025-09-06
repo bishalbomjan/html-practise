@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .sprite {
+        background: url("../images/sprite.png") no-repeat top left;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+      }
+      .sprite.bg-dishes {
+        background-position: 0 0;
+      }
+      .sprite.bg-landing {
+        background-position: -110px 0;
+      }
+      .sprite.bg-rocketship {
+        background-position: -220px 0;
+      }
+      .sprite.bg-saturn {
+        background-position: -330px 0;
+      }
+      .sprite.bg-ufo {
+        background-position: -440px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="sprite bg-saturn"></span>
+    <span class="sprite bg-rocketship"></span>
+    <span class="sprite bg-landing"></span>
+    <span class="sprite bg-dishes"></span>
+    <span class="sprite bg-ufo"></span>
+  </body>
+</html>
